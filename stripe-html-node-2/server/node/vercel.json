@@ -3,11 +3,7 @@
   "functions": {
     "server.js": {
       "runtime": "nodejs18.x",
-      "includeFiles": [
-        "server/node/html/**",
-        "server/node/css/**",
-        "server/node/js/**"
-      ]
+      "includeFiles": "server/node/**/*"
     }
   },
   "routes": [
