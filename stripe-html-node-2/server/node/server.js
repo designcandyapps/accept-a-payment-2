@@ -17,11 +17,16 @@ const PORT = process.env.PORT || 3009;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 // Static files serve karna
-app.use(express.static(path.join(__dirname, process.env.STATIC_DIR)));
+// app.use(express.static(path.join(__dirname, process.env.STATIC_DIR)));
 
 // Root route
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, process.env.STATIC_DIR, "index.html"));
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname, process.env.STATIC_DIR, "index.html"));
+// });
+
+app.use(express.static(path.join(__dirname, "html")));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "html", "index.html"));
 });
 
 
