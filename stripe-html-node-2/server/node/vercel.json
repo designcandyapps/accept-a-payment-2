@@ -11,11 +11,7 @@
   ],
   "functions": {
     "server.js": {
-      "includeFiles": [
-        "html/**",
-        "css/**",
-        "js/**"
-      ]
+      "includeFiles": "html/**"
     }
   }
 }
