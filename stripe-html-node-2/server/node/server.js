@@ -24,6 +24,8 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 //   res.sendFile(path.join(__dirname, process.env.STATIC_DIR, "index.html"));
 // });
 
+// test
+
 app.use(express.static(path.join(__dirname, "html")));
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "html", "index.html"));
