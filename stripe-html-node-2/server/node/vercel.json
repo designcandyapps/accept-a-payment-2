@@ -1,19 +1,20 @@
 {
+  "version": 2,
   "builds": [
     {
-      "src": "server/node/server.js",
+      "src": "server.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "server/node/server.js" }
+    { "src": "/(.*)", "dest": "server.js" }
   ],
   "functions": {
-    "server/node/server.js": {
+    "server.js": {
       "includeFiles": [
-        "server/node/html/**",
-        "server/node/css/**",
-        "server/node/js/**"
+        "html/**",
+        "css/**",
+        "js/**"
       ]
     }
   ]
