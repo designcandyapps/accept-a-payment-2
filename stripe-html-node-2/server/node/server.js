@@ -6,15 +6,26 @@ const { resolve } = require('path');
 const app = express();
 const calculateTax = false;
 
-// ✅ Resolve STATIC_DIR correctly for Vercel
-const staticPath = path.join(process.cwd(), process.env.STATIC_DIR || "client/html");
-console.log("Serving static files from:", staticPath);
+
 
 app.use(express.static(staticPath));
 
 // ✅ Listen to PORT from env or default
 const PORT = process.env.PORT || 3009;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+
+
+// Static files serve karna
+app.use(express.static(path.join(__dirname, process.env.STATIC_DIR)));
+
+// Root route
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, process.env.STATIC_DIR, "index.html"));
+});
+
+
+
 
 // Stripe initialization
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
