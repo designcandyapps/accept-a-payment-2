@@ -1,0 +1,18 @@
+{
+  "name": "stripe-sample-accept-a-payment",
+  "version": "1.0.0",
+  "description": "Stripe payment sample.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "stripe-samples",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.0",
+    "stripe": "^14.21.0"
+  }
+}
